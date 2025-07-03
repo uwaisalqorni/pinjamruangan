@@ -30,7 +30,7 @@ body
   background: #fff;
 }
 .table thead th {
-  background-color: #931313;
+  background-color: #139340;
   color: #fff;
 }
 .table td.fit, .table th.fit {
@@ -38,8 +38,8 @@ body
   width: 1%;
 }
 .navbar-inverse {
-    background-color: #931313;
-    border-color: #6b0505;
+    background-color: #139333;
+    border-color: #056b18;
 }
 .btn {
 	border-radius: 10px;
@@ -52,10 +52,10 @@ body
 }
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus,.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
     color: #e2feff;
-    background-color: #f63939;
+    background-color: #39f675;
 }
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: #db4028;
+    background-color: #28db40;
     color: #ffffff;
 }
 .panel-hidden {
@@ -64,26 +64,26 @@ body
 .pagination > li > a, .pagination > li > span, .pagination > li > a, .pagination > li > span {
     z-index: 2;
     color: #ffffff;
-    background-color: #e32c2c;
+    background-color: #2fe32c;
     border-color: transparent;
 }
 .pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
     z-index: 2;
     color: #ffffff;
-    background-color: #981b07;
+    background-color: #07981d;
     border-color: transparent;
 }
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
     z-index: 3;
     color: #ffffff;
-    background-color: #660b0b;
+    background-color: #14660b;
     border-color: transparent;
     cursor: default;
 }
 .btn-success {
     color: #ffffff;
-    background-color: #931313;
-    border-color: #6b0505;
+    background-color: #13932f;
+    border-color: #056b0c;
 }
 .width-sm {
     width: 2%;
@@ -95,7 +95,7 @@ body
     width: 99.5%;
 }
 a {
-    color: #ae0404;
+    color: #04ae26;
     text-decoration: none;
 }
 footer 
@@ -108,7 +108,7 @@ footer
   position: fixed;
   bottom: 0;
   margin-bottom: 0;
-  background-color: #931313;
+  background-color: #139322;
 }
 label.isi {
 	font-weight:normal;
@@ -131,6 +131,6 @@ label.isi {
 	color:#000;
 }
 .input-error {
-    border-color: red;
+    border-color: rgb(0, 255, 26);
     background-color: orange;
 }

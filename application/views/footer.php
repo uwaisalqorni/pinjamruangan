@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <!-- Footer -->
 <footer>
-  <p>ARTERI Arsip Elektronik Terintegrasi</p>
+  <p>Arsip E-RSIG</p>
 </footer>
 <!-- /.Footer -->
 

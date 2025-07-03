@@ -26,7 +26,7 @@
             <input type="text" class="form-control" name="username" id="loginEmail" placeholder="username" required autofocus>
             <input type="password" class="form-control" name="password" id="loginPass" placeholder="sandi" required>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-            <br><p align="center">Arteri Open Source</p>
+            <br><p align="center">Arsip E-Rsig</p>
           </form>
 
         </div>

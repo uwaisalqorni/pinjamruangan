@@ -11,20 +11,20 @@ body
 	font-family: 'Actor', serif;
 	padding-top: 40px;
 	padding-bottom: 40px;
-	background-color: #931313;
+	background-color: #289313;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: middle center;
 	background-image: url('../images/bg1.jpg');
 }
 .btn-primary:hover {
-  background-color: #de0f0f;
-	border-color: #6b0505;
+  background-color: #064e06;
+	border-color: #086b05;
 }
 .btn-primary {
   color: #fff;
-  background-color: #931313;
-  border-color: #6b0505;
+  background-color: #139326;
+  border-color: #116b05;
 }
 .form-signin {
   max-width: 330px;

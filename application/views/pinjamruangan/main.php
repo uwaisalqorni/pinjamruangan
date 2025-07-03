@@ -53,6 +53,17 @@
             <td>
 							<!-- Tombol Edit -->
 							<a href="<?= site_url('/pinjamruangan/vedit/'.$row['id']); ?>" class="btn btn-xs btn-primary">Edit</a>
+							<!-- Tombol Lihat Data -->
+
+							<!-- <a href="<?= site_url('/pinjamruangan/view/'.$row['id']); ?>" class="btn btn-xs btn-info">
+								<i class="glyphicon glyphicon-eye-open"></i> Lihat
+							</a> -->
+
+							<!-- Tombol Lihat Report -->
+							<a href="<?= site_url('/pinjamruangan/report/'.$row['id']); ?>" class="btn btn-xs btn-info">
+								<i class="glyphicon glyphicon-eye-open"></i> Lihat
+							</a>
+
 
 							<?php if (isset($admin)): ?>
 								<!-- Tombol Setujui -->

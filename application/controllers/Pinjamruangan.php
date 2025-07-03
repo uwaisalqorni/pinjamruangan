@@ -212,4 +212,110 @@ class Pinjamruangan extends CI_Controller {
 		redirect('/pinjamruangan/vedit/'.$id);
 	}
 
+	public function view($id)
+		{
+			if (!in_array($this->session->tipe, ['admin', 'user'])) {
+				show_error('Anda tidak memiliki akses untuk melihat data.', 403);
+				return;
+			}
+
+			if ($id) {
+				$row = $this->db->get_where('pinjamruangan', ['id' => $id])->row_array();
+
+				if ($row) {
+					$data = [
+						'id'         => $row['id'],
+						'nama'       => $row['nama'],
+						'nik'        => $row['nik'],
+						'unit'       => $row['unit'],
+						'datetime'   => $row['datetime'],
+						'tempat'     => $row['tempat'],
+						'jumlah'     => $row['jumlah'],
+						'keterangan' => $row['keterangan'],
+						'status'     => $row['status'],
+						'title'      => "Detail Peminjaman Ruangan"
+					];
+
+					$this->__output('pinjamruangan/view', $data);
+				} else {
+					$this->session->set_flashdata('error', 'Data tidak ditemukan.');
+					redirect('/pinjamruangan');
+				}
+			} else {
+				$this->session->set_flashdata('error', 'ID tidak valid.');
+				redirect('/pinjamruangan');
+			}
+		}
+	
+		public function report($id)
+		{
+			if (!in_array($this->session->tipe, ['admin', 'user'])) {
+				show_error('Anda tidak memiliki akses untuk melihat report.', 403);
+				return;
+			}
+
+			$row = $this->db->get_where('pinjamruangan', ['id' => $id])->row_array();
+
+			if ($row) {
+				$data = [
+					'id'         => $row['id'],
+					'nama'       => $row['nama'],
+					'nik'        => $row['nik'],
+					'unit'       => $row['unit'],
+					'datetime'   => $row['datetime'],
+					'tempat'     => $row['tempat'],
+					'jumlah'     => $row['jumlah'],
+					'keterangan' => $row['keterangan'],
+					'status'     => $row['status'],
+					'title'      => "Lihat Report"
+				];
+
+				$this->__output('pinjamruangan/report', $data);
+			} else {
+				$this->session->set_flashdata('error', 'Data tidak ditemukan.');
+				redirect('/pinjamruangan');
+			}
+		}
+	
+		public function report_pdf($id)
+		{
+			if (!in_array($this->session->tipe, ['admin', 'user'])) {
+				show_error('Anda tidak memiliki akses untuk mencetak PDF.', 403);
+				return;
+			}
+		
+			$row = $this->db->get_where('pinjamruangan', ['id' => $id])->row_array();
+		
+			if ($row) {
+				$data = [
+					'id'         => $row['id'],
+					'nama'       => $row['nama'],
+					'nik'        => $row['nik'],
+					'unit'       => $row['unit'],
+					'datetime'   => $row['datetime'],
+					'tempat'     => $row['tempat'],
+					'jumlah'     => $row['jumlah'],
+					'keterangan' => $row['keterangan'],
+					'status'     => $row['status'],
+					'title'      => "Laporan Peminjaman Ruangan"
+				];
+		
+				// Render view HTML
+				$html = $this->load->view('pinjamruangan/report_pdf', $data, true);
+		
+				// Load Dompdf
+				$this->load->library('pdf');
+				$this->pdf->loadHtml($html);
+				$this->pdf->setPaper('A4', 'portrait');
+				$this->pdf->render();
+		
+				// Output PDF ke browser
+				$this->pdf->stream("Peminjaman_Ruangan_".$row['nama'].".pdf", array("Attachment" => false));
+			} else {
+				$this->session->set_flashdata('error', 'Data tidak ditemukan.');
+				redirect('/pinjamruangan');
+			}
+		}		
+
+
 }
